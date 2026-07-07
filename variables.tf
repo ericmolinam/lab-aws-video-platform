@@ -14,3 +14,14 @@ variable "project" {
     error_message = "The project variable must be lowercase alphanumeric/hyphens, 3-31 chars, starting with a letter."
   }
 }
+
+variable "upload_url_ttl" {
+  description = "Expiration time (in seconds) of the presigned upload URLs returned by the app."
+  type        = number
+  default     = 3600
+
+  validation {
+    condition     = var.upload_url_ttl >= 60 && var.upload_url_ttl <= 604800
+    error_message = "The upload_url_ttl variable must be between 60 seconds and 7 days."
+  }
+}

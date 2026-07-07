@@ -61,9 +61,9 @@ resource "aws_s3_bucket_notification" "raw" {
   bucket = aws_s3_bucket.raw.id
 
   queue {
-    queue_arn = aws_sqs_queue.transcoding.arn
+    queue_arn = aws_sqs_queue.this.arn
     events    = ["s3:ObjectCreated:*"]
   }
 
-  depends_on = [aws_sqs_queue_policy.transcoding]
+  depends_on = [aws_sqs_queue_policy.this]
 }

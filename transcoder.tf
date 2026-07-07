@@ -84,7 +84,7 @@ resource "aws_lambda_function" "transcoder" {
 }
 
 resource "aws_lambda_event_source_mapping" "transcoding_queue" {
-  event_source_arn = aws_sqs_queue.transcoding.arn
+  event_source_arn = aws_sqs_queue.this.arn
   function_name    = aws_lambda_function.transcoder.arn
   batch_size       = 1
 }

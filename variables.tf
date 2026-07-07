@@ -25,3 +25,14 @@ variable "upload_url_ttl" {
     error_message = "The upload_url_ttl variable must be between 60 seconds and 7 days."
   }
 }
+
+variable "renditions" {
+  description = "Video qualities the transcoding step produces for each uploaded master."
+  type        = list(string)
+  default     = ["1080p", "720p", "480p"]
+
+  validation {
+    condition     = length(var.renditions) > 0
+    error_message = "The renditions variable must contain at least one quality."
+  }
+}

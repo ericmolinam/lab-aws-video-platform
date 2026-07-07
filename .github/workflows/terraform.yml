@@ -24,7 +24,7 @@ env:
   TF_CLOUD_ORGANIZATION: "emolinam5"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "lab-video-platform"
-  CONFIG_DIRECTORY: "./terraform"
+  CONFIG_DIRECTORY: "."
 
 jobs:
   plan:

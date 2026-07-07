@@ -57,5 +57,5 @@ resource "aws_s3_bucket_policy" "encoded" {
     ]
   })
 
-  depends_on = [aws_s3_bucket_public_access_block.encoded]
+  depends_on = [aws_s3_bucket_public_access_block.this]
 }

@@ -76,7 +76,7 @@ resource "aws_lambda_function" "transcoder" {
 
   environment {
     variables = {
-      TABLE_NAME     = aws_dynamodb_table.videos.name
+      TABLE_NAME     = aws_dynamodb_table.this.name
       ENCODED_BUCKET = aws_s3_bucket.encoded.id
       RENDITIONS     = join(",", var.renditions)
     }
